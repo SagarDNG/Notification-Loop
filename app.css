@@ -1,6 +1,14 @@
-* {
-    margin: 0;
-    background-image: url('CFI.jpg');
-    background-repeat: no-repeat;
-    /* background-size: 50%; */
+.card {
+    padding: 2em;
+    width: 30em;
+    margin: 2em auto;
+}
+
+.card-body {
+    margin: auto;
+    text-align: center;
+}
+
+.no-decoration {
+    text-decoration: none;
 }
