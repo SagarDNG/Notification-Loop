@@ -1,9 +1,16 @@
+// -------- To show stop notification para & button ---------------
 const p = document.getElementById('p');
 const stopButton = document.getElementById('stopButton');
+// ----------------------------------------------------------------
 
-// function To get new Joke
-let jokeBody;
-let notifyInterval;
+
+// --------------------------------------------------------------------------------
+let jokeBody; //to access actual joke (which is inside a function) everywhere
+let notifyInterval; // to stop notification (in clearInterval)
+// --------------------------------------------------------------------------------
+
+
+// --------------- function To get new Joke --------------------------
 async function getJoke() {
     const jokeData = await fetch('https://icanhazdadjoke.com/', {
         headers: {
@@ -12,11 +19,11 @@ async function getJoke() {
     });
     const joke = await jokeData.json();
     jokeBody = joke.joke;
-    // return jokeBody;
-    console.log(jokeBody);
 }
+// --------------------------------------------------------------------
 
-// function To create new Notification with Audio
+
+// ---- function To create new Notification with Audio -----------
 async function showNotification() {
     await getJoke();
     new Notification("Joke :)", {
@@ -25,10 +32,16 @@ async function showNotification() {
     });
     new Audio('audio-2.mp3').play();
 }
+// ---------------------------------------------------------------
 
+
+// --------------------- function To display notification -----------------------------------
 function notifyMe() {
+
+    // showing stop notification
     p.classList.add('d-block');
     stopButton.classList.add('d-block');
+
     if (Notification.permission === "granted") {
         notifyInterval = setInterval(showNotification, 5000);
         // if permission is already granted, we'll get Notification in every 3 sec
@@ -42,8 +55,15 @@ function notifyMe() {
         });
     }
 }
+// -------------------------------------------------------------------------------------------
 
 
+// ----- function To stop notification ----
 function stopNotify() {
     clearInterval(notifyInterval);
 }
+// ----------------------------------------
+
+
+// =======================================
+// The audio.mp3 is of 8 sec lengthy, so, when we click stopButton, it'll take 8 seconds to stop the audio

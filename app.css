@@ -17,3 +17,11 @@
 #stopButton {
     display: none;
 }
+
+@media (max-width: 800px) {
+    .card {
+        padding: 1.4em;
+        width: 24em;
+        margin: 2em auto;
+    }
+}
