@@ -12,3 +12,8 @@
 .no-decoration {
     text-decoration: none;
 }
+
+#p,
+#stopButton {
+    display: none;
+}
