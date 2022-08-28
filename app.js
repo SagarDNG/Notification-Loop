@@ -30,7 +30,7 @@ async function showNotification() {
         body: jokeBody,
         icon: 'https://icanhazdadjoke.com/static/smile.svg'
     });
-    new Audio('audio-2.mp3').play();
+    new Audio('audio.mp3').play();
 }
 // ---------------------------------------------------------------
 
@@ -43,14 +43,14 @@ function notifyMe() {
     stopButton.classList.add('d-block');
 
     if (Notification.permission === "granted") {
-        notifyInterval = setInterval(showNotification, 5000);
-        // if permission is already granted, we'll get Notification in every 3 sec
+        notifyInterval = setInterval(showNotification, 9000);
+        // if permission is already granted, we'll get Notification in every 10 sec
 
     } else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(permission => {
             if (permission === "granted") {
-                notifyInterval = setInterval(showNotification, 5000);
-                // after giving permission, we'll get Notification in every 5 sec
+                notifyInterval = setInterval(showNotification, 9000);
+                // after giving permission, we'll get Notification in every 10 sec
             }
         });
     }
