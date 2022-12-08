@@ -1,4 +1,4 @@
-// -------- To show stop notification para & button ---------------
+// -------- To show stop notification, we have para & button ---------------
 const p = document.getElementById('p');
 const stopButton = document.getElementById('stopButton');
 // ----------------------------------------------------------------
@@ -38,7 +38,7 @@ async function showNotification() {
 // --------------------- function To display notification -----------------------------------
 function notifyMe() {
 
-    // showing stop notification
+    // showing paragraph to stop notification
     p.classList.add('d-block');
     stopButton.classList.add('d-block');
 
